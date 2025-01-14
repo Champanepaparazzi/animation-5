@@ -28,7 +28,7 @@
     document.body.appendChild(renderer.domElement);
 
     // Particle System
-    const particleCount = 7000; // Increased particle count
+    const particleCount = 10000; // Increased particle count
     const particleGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
@@ -78,7 +78,7 @@
 
     const particleMaterial = new THREE.PointsMaterial({
       map: particleTexture,
-      size: 0.5, // Set size of particles
+      size: 0.2, // Smaller particle size (was 0.5)
       transparent: true,
       opacity: 0.8,
       alphaTest: 0.5,
