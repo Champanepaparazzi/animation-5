@@ -137,6 +137,16 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Adjust the camera field of view based on screen size for responsiveness
+      if (window.innerWidth < 600) { // Mobile devices
+        camera.fov = 60;
+      } else if (window.innerWidth < 1024) { // Tablets
+        camera.fov = 70;
+      } else { // Desktops
+        camera.fov = 75;
+      }
+      camera.updateProjectionMatrix();
     });
   </script>
 </body>
